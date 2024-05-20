@@ -1,117 +1,108 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:indowira/src/constants/constants.dart';
+import 'package:indowira/src/routes/routes.dart';
+import 'package:overlay_support/overlay_support.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  /// [INFO] Init hive local db
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const ProviderScope(child: MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final router = ref.read(goRouterProvider);
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  bool isClicked = false;
-
-  void _onTap() {
-    setState(() {
-      isClicked = true;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: !isClicked
-            ? Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    "Kamu mau gak jadi pacarku?",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.center,
-                  ),
-                  SizedBox(
-                    height: 200,
-                    child: Image.asset('assets/cat.gif'),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      ElevatedButton(
-                        onPressed: _onTap,
-                        style: ButtonStyle(
-                          backgroundColor:
-                              WidgetStatePropertyAll(Colors.pinkAccent[100]),
-                        ),
-                        child: const Text(
-                          "MAU!!",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                      ElevatedButton(
-                        onPressed: _onTap,
-                        style: const ButtonStyle(
-                          backgroundColor: WidgetStatePropertyAll(Colors.black),
-                        ),
-                        child: const Text(
-                          "Sekip Dulu",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              )
-            : const Column(
-              mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    "You're done lil bro",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text("""
-IP. 92.28.211.23
-N: 43.7462
-W: 12.4893 SS Number: 6979191519182043
-IPv6: fe80:5dcd.:ef69:fb22::d9 
-UPP: Enabled DMZ: 10.112.42
-MAC: 5A:78:3:7E:00
-DNS: 8.8.8.8
-ALT DNS: 1.1.1.8.1
-DNS SUFFIX:
-Dink WAN: 100.236
-GATEWAY: 192.168
-UDP OPEN PORT: 8080.80
-"""),
-                ],
-              ),
+    /// [INFO]
+    /// As we use flutter_screenutil for responsive pixel
+    /// with considering the design system size (390, 844).
+    /// then don't forget to use these extension :
+    /// 1. .h -> to pixel related with height, ex : 16.h
+    /// 2. .w -> to pixel related with width, ex : 24.w
+    /// 3. .r -> to pixel related with radius, ex : 8.r
+    /// 4. .sp -> to pixel related with font size, ex : 14.sp
+    ///
+    /// [INFO]
+    /// FocusManager is used for unfocus whenever user click outside of the textfield, it will unfocus.
+    return GestureDetector(
+      onTap: () {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: ScreenUtilInit(
+        designSize: const Size(375, 812),
+        minTextAdapt: true,
+        builder: (context, child) {
+          return OverlaySupport.global(
+            child: MaterialApp.router(
+              debugShowCheckedModeBanner: false,
+              routerDelegate: router.routerDelegate,
+              routeInformationParser: router.routeInformationParser,
+              routeInformationProvider: router.routeInformationProvider,
+              title: 'Indowira',
+              theme: _appTheme,
+              builder: (context, child) {
+                ErrorWidget.builder = (details) {
+                  return CustomErrorWidget(errorDetails: details);
+                };
+                return child ?? const Scaffold();
+              },
+            ),
+          );
+        },
       ),
     );
   }
 }
+
+/// [INFO]
+/// Show this Widget when something error happens
+class CustomErrorWidget extends StatelessWidget {
+  final FlutterErrorDetails errorDetails;
+
+  const CustomErrorWidget({
+    super.key,
+    required this.errorDetails,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Card(
+      color: Colors.red,
+      margin: EdgeInsets.zero,
+      child: Padding(
+        padding: EdgeInsets.all(8.0),
+        child: Center(
+          child: Text(
+            "Something is not right here...",
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+final _appTheme = ThemeData(
+  scaffoldBackgroundColor: ColorApp.white,
+  colorScheme: const ColorScheme.light(
+    primary: ColorApp.red,
+    secondary: ColorApp.white,
+    surface: ColorApp.scaffold,
+  ),
+  fontFamily: GoogleFonts.rubik().fontFamily,
+  pageTransitionsTheme: const PageTransitionsTheme(
+    builders: <TargetPlatform, PageTransitionsBuilder>{
+      TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+      TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+    },
+  ),
+);
