@@ -8,9 +8,11 @@ enum Routes {
   splash,
   login,
   register,
-  home,
-  detail,
-  favorite,
+  signAs,
+  emailConfirmation,
+  whatsappConfirmation,
+  passwordRecovery,
+  dashboard,
 }
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -46,11 +48,40 @@ final goRouterProvider = Provider<GoRouter>(
           path: '/register',
           name: Routes.register.name,
           builder: (context, state) => const RegisterPage(),
+          routes: [
+            GoRoute(
+              path: 'email-confirmation',
+              name: Routes.emailConfirmation.name,
+              builder: (context, state) => const EmailConfirmationPage(),
+            ),
+            GoRoute(
+              path: 'whatsapp-confirmation',
+              name: Routes.whatsappConfirmation.name,
+              builder: (context, state) => const WhatsappConfirmationPage(),
+            ),
+          ],
         ),
         GoRoute(
           path: '/login',
           name: Routes.login.name,
           builder: (context, state) => const LoginPage(),
+          routes: [
+            GoRoute(
+              path: 'password-recovery',
+              name: Routes.passwordRecovery.name,
+              builder: (context, state) => const PasswordRecoveryPage(),
+            ),
+            GoRoute(
+              path: 'sign-as',
+              name: Routes.signAs.name,
+              builder: (context, state) => const SignAsPage(),
+            ),
+          ],
+        ),
+        GoRoute(
+          path: '/dashboard',
+          name: Routes.dashboard.name,
+          builder: (context, state) => const DashboardPage(),
         ),
       ],
       errorBuilder: (context, state) => ErrorPage(

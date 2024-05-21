@@ -92,7 +92,7 @@ class CustomErrorWidget extends StatelessWidget {
 }
 
 final _appTheme = ThemeData(
-  scaffoldBackgroundColor: ColorApp.white,
+  scaffoldBackgroundColor: ColorApp.scaffold,
   colorScheme: const ColorScheme.light(
     primary: ColorApp.red,
     secondary: ColorApp.white,
