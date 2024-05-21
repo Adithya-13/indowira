@@ -30,6 +30,7 @@ extension XTextStyle on TextStyle {
   TextStyle get lightGrey => copyWith(color: ColorApp.lightGrey);
   TextStyle get grey => copyWith(color: ColorApp.grey);
   TextStyle get blue => copyWith(color: ColorApp.blue);
+  TextStyle get pink => copyWith(color: ColorApp.pink);
 
   /// [INFO]
   /// Extension for change font size

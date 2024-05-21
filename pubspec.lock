@@ -340,10 +340,10 @@ packages:
     dependency: "direct main"
     description:
       name: go_router
-      sha256: aa073287b8f43553678e6fa9e8bb9c83212ff76e09542129a8099bbc8db4df65
+      sha256: b465e99ce64ba75e61c8c0ce3d87b66d8ac07f0b35d0a7e0263fcfc10f99e836
       url: "https://pub.dev"
     source: hosted
-    version: "14.1.2"
+    version: "13.2.5"
   google_fonts:
     dependency: "direct main"
     description:
@@ -504,6 +504,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
+  modal_bottom_sheet:
+    dependency: "direct main"
+    description:
+      name: modal_bottom_sheet
+      sha256: eac66ef8cb0461bf069a38c5eb0fa728cee525a531a8304bd3f7b2185407c67e
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   octo_image:
     dependency: transitive
     description:
@@ -592,6 +600,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.1"
+  persistent_bottom_nav_bar_v2:
+    dependency: "direct main"
+    description:
+      name: persistent_bottom_nav_bar_v2
+      sha256: c725f11e0c3d5dad388f8eb9bcfbf701d1a472cad71d2b5fb344ac149e3da7ff
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.2.3"
   petitparser:
     dependency: transitive
     description:

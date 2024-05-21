@@ -89,7 +89,7 @@ class WhatsappConfirmationPage extends StatelessWidget {
                         ButtonWidget.primary(
                           text: "SELANJUTNYA",
                           onTap: () {
-                            context.goNamed(Routes.dashboard.name);
+                            context.goNamed(Routes.home.name);
                           },
                         ),
                       ],

@@ -12,7 +12,10 @@ enum Routes {
   emailConfirmation,
   whatsappConfirmation,
   passwordRecovery,
-  dashboard,
+  home,
+  feed,
+  wireLeader,
+  account,
 }
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -79,9 +82,24 @@ final goRouterProvider = Provider<GoRouter>(
           ],
         ),
         GoRoute(
-          path: '/dashboard',
-          name: Routes.dashboard.name,
-          builder: (context, state) => const DashboardPage(),
+          path: '/home',
+          name: Routes.home.name,
+          builder: (context, state) => const DashboardPage(tabIndex: 0),
+        ),
+        GoRoute(
+          path: '/feed',
+          name: Routes.feed.name,
+          builder: (context, state) => const DashboardPage(tabIndex: 1),
+        ),
+        GoRoute(
+          path: '/wire_leader',
+          name: Routes.wireLeader.name,
+          builder: (context, state) => const DashboardPage(tabIndex: 3),
+        ),
+        GoRoute(
+          path: '/account',
+          name: Routes.account.name,
+          builder: (context, state) => const DashboardPage(tabIndex: 4),
         ),
       ],
       errorBuilder: (context, state) => ErrorPage(

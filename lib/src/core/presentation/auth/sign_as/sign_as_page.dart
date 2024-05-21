@@ -88,7 +88,7 @@ class CommunityListTile extends StatelessWidget {
       padding: EdgeInsets.only(bottom: SizeApp.h16),
       child: GestureDetector(
         onTap: () {
-          context.goNamed(Routes.dashboard.name);
+          context.goNamed(Routes.home.name);
         },
         child: Container(
           decoration: BoxDecoration(

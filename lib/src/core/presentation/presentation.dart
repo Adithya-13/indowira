@@ -25,3 +25,11 @@ export 'auth/password_recovery/password_recovery_page.dart';
 //* DASHBOARD
 /// dashboard
 export 'dashboard/dashboard_page.dart';
+/// home
+export 'dashboard/home/home_page.dart';
+/// feed
+export 'dashboard/feed/feed_page.dart';
+/// wire_leader
+export 'dashboard/wira_leader/wira_leader_page.dart';
+/// account
+export 'dashboard/account/account_page.dart';
