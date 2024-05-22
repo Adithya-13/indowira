@@ -27,6 +27,7 @@ export 'auth/password_recovery/password_recovery_page.dart';
 export 'dashboard/dashboard_page.dart';
 /// home
 export 'dashboard/home/home_page.dart';
+export 'dashboard/home/widgets/widgets.dart';
 /// feed
 export 'dashboard/feed/feed_page.dart';
 /// wire_leader

@@ -99,7 +99,7 @@ class ButtonWidget extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.symmetric(
             horizontal: SizeApp.w28,
-            vertical: SizeApp.h12,
+            vertical: SizeApp.h8,
           ),
           child: Center(
             child: isLoading
