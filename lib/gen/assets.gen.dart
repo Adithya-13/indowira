@@ -80,6 +80,10 @@ class $AssetsSvgsGen {
   SvgGenImage get artikelSheet =>
       const SvgGenImage('assets/svgs/artikel_sheet.svg');
 
+  /// File path: assets/svgs/charity_drawer.svg
+  SvgGenImage get charityDrawer =>
+      const SvgGenImage('assets/svgs/charity_drawer.svg');
+
   /// File path: assets/svgs/charity_sheet.svg
   SvgGenImage get charitySheet =>
       const SvgGenImage('assets/svgs/charity_sheet.svg');
@@ -98,6 +102,18 @@ class $AssetsSvgsGen {
   SvgGenImage get forumSheet =>
       const SvgGenImage('assets/svgs/forum_sheet.svg');
 
+  /// File path: assets/svgs/founder_komunitas.svg
+  SvgGenImage get founderKomunitas =>
+      const SvgGenImage('assets/svgs/founder_komunitas.svg');
+
+  /// File path: assets/svgs/founder_pengusaha.svg
+  SvgGenImage get founderPengusaha =>
+      const SvgGenImage('assets/svgs/founder_pengusaha.svg');
+
+  /// File path: assets/svgs/founder_sekolah.svg
+  SvgGenImage get founderSekolah =>
+      const SvgGenImage('assets/svgs/founder_sekolah.svg');
+
   /// File path: assets/svgs/google.svg
   SvgGenImage get google => const SvgGenImage('assets/svgs/google.svg');
 
@@ -111,20 +127,92 @@ class $AssetsSvgsGen {
   SvgGenImage get kelasSheet =>
       const SvgGenImage('assets/svgs/kelas_sheet.svg');
 
+  /// File path: assets/svgs/komunitas_drawer.svg
+  SvgGenImage get komunitasDrawer =>
+      const SvgGenImage('assets/svgs/komunitas_drawer.svg');
+
   /// File path: assets/svgs/komunitas_sheet.svg
   SvgGenImage get komunitasSheet =>
       const SvgGenImage('assets/svgs/komunitas_sheet.svg');
+
+  /// File path: assets/svgs/laporan_drawer.svg
+  SvgGenImage get laporanDrawer =>
+      const SvgGenImage('assets/svgs/laporan_drawer.svg');
+
+  /// File path: assets/svgs/member_drawer.svg
+  SvgGenImage get memberDrawer =>
+      const SvgGenImage('assets/svgs/member_drawer.svg');
+
+  /// File path: assets/svgs/membership_drawer.svg
+  SvgGenImage get membershipDrawer =>
+      const SvgGenImage('assets/svgs/membership_drawer.svg');
+
+  /// File path: assets/svgs/mentor_drawer.svg
+  SvgGenImage get mentorDrawer =>
+      const SvgGenImage('assets/svgs/mentor_drawer.svg');
 
   /// File path: assets/svgs/mentoring_sheet.svg
   SvgGenImage get mentoringSheet =>
       const SvgGenImage('assets/svgs/mentoring_sheet.svg');
 
+  /// File path: assets/svgs/pengumuman_drawer.svg
+  SvgGenImage get pengumumanDrawer =>
+      const SvgGenImage('assets/svgs/pengumuman_drawer.svg');
+
+  /// File path: assets/svgs/pengurus_drawer.svg
+  SvgGenImage get pengurusDrawer =>
+      const SvgGenImage('assets/svgs/pengurus_drawer.svg');
+
   /// File path: assets/svgs/project_sheet.svg
   SvgGenImage get projectSheet =>
       const SvgGenImage('assets/svgs/project_sheet.svg');
 
+  /// File path: assets/svgs/reseller_drawer.svg
+  SvgGenImage get resellerDrawer =>
+      const SvgGenImage('assets/svgs/reseller_drawer.svg');
+
   /// File path: assets/svgs/splash.svg
   SvgGenImage get splash => const SvgGenImage('assets/svgs/splash.svg');
+
+  /// File path: assets/svgs/start_up_drawer.svg
+  SvgGenImage get startUpDrawer =>
+      const SvgGenImage('assets/svgs/start_up_drawer.svg');
+
+  /// File path: assets/svgs/support_drawer.svg
+  SvgGenImage get supportDrawer =>
+      const SvgGenImage('assets/svgs/support_drawer.svg');
+
+  /// File path: assets/svgs/syirkah_drawer.svg
+  SvgGenImage get syirkahDrawer =>
+      const SvgGenImage('assets/svgs/syirkah_drawer.svg');
+
+  /// File path: assets/svgs/usaha_drawer.svg
+  SvgGenImage get usahaDrawer =>
+      const SvgGenImage('assets/svgs/usaha_drawer.svg');
+
+  /// File path: assets/svgs/usaha_level_0.svg
+  SvgGenImage get usahaLevel0 =>
+      const SvgGenImage('assets/svgs/usaha_level_0.svg');
+
+  /// File path: assets/svgs/usaha_level_1.svg
+  SvgGenImage get usahaLevel1 =>
+      const SvgGenImage('assets/svgs/usaha_level_1.svg');
+
+  /// File path: assets/svgs/usaha_level_2.svg
+  SvgGenImage get usahaLevel2 =>
+      const SvgGenImage('assets/svgs/usaha_level_2.svg');
+
+  /// File path: assets/svgs/usaha_level_3.svg
+  SvgGenImage get usahaLevel3 =>
+      const SvgGenImage('assets/svgs/usaha_level_3.svg');
+
+  /// File path: assets/svgs/usaha_level_4.svg
+  SvgGenImage get usahaLevel4 =>
+      const SvgGenImage('assets/svgs/usaha_level_4.svg');
+
+  /// File path: assets/svgs/usaha_level_5.svg
+  SvgGenImage get usahaLevel5 =>
+      const SvgGenImage('assets/svgs/usaha_level_5.svg');
 
   /// File path: assets/svgs/usaha_sheet.svg
   SvgGenImage get usahaSheet =>
@@ -140,19 +228,41 @@ class $AssetsSvgsGen {
   /// List of all assets
   List<SvgGenImage> get values => [
         artikelSheet,
+        charityDrawer,
         charitySheet,
         eventSheet,
         facebook,
         feedSheet,
         forumSheet,
+        founderKomunitas,
+        founderPengusaha,
+        founderSekolah,
         google,
         grupSheet,
         jobSheet,
         kelasSheet,
+        komunitasDrawer,
         komunitasSheet,
+        laporanDrawer,
+        memberDrawer,
+        membershipDrawer,
+        mentorDrawer,
         mentoringSheet,
+        pengumumanDrawer,
+        pengurusDrawer,
         projectSheet,
+        resellerDrawer,
         splash,
+        startUpDrawer,
+        supportDrawer,
+        syirkahDrawer,
+        usahaDrawer,
+        usahaLevel0,
+        usahaLevel1,
+        usahaLevel2,
+        usahaLevel3,
+        usahaLevel4,
+        usahaLevel5,
         usahaSheet,
         welcomeBanner,
         whatsapp

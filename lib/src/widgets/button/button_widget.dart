@@ -7,6 +7,7 @@ import 'package:indowira/src/widgets/widgets.dart';
 enum ButtonType {
   primary,
   secondary,
+  outlined,
 }
 
 class ButtonWidget extends StatelessWidget {
@@ -37,6 +38,16 @@ class ButtonWidget extends StatelessWidget {
   })  : buttonType = ButtonType.primary,
         _isEnabled = isEnabled ?? onTap != null;
 
+  const ButtonWidget.outlined({
+    super.key,
+    this.onTap,
+    this.isLoading = false,
+    required this.text,
+    this.prefix,
+    bool? isEnabled,
+  })  : buttonType = ButtonType.outlined,
+        _isEnabled = isEnabled ?? onTap != null;
+
   const ButtonWidget.secondary({
     super.key,
     this.onTap,
@@ -48,16 +59,22 @@ class ButtonWidget extends StatelessWidget {
         _isEnabled = isEnabled ?? onTap != null;
 
   Color getColor() => _isEnabled
-      ? buttonType == ButtonType.primary
-          ? ColorApp.red
-          : ColorApp.lightGrey
+      ? switch (buttonType) {
+          ButtonType.primary => ColorApp.red,
+          ButtonType.secondary => ColorApp.lightGrey,
+          ButtonType.outlined => ColorApp.white,
+        }
       : ColorApp.grey;
 
-  Color getFocusColor() =>
-      buttonType == ButtonType.primary ? ColorApp.darkRed : ColorApp.grey;
+  Color getFocusColor() => switch (buttonType) {
+        ButtonType.primary => ColorApp.darkRed,
+        ButtonType.secondary => ColorApp.grey.withOpacity(0.2),
+        ButtonType.outlined => ColorApp.red.withOpacity(0.2),
+      };
 
   bool get isPrimary => buttonType == ButtonType.primary;
   bool get isSecondary => buttonType == ButtonType.secondary;
+  bool get isOutlined => buttonType == ButtonType.outlined;
 
   @override
   Widget build(BuildContext context) {
@@ -65,13 +82,17 @@ class ButtonWidget extends StatelessWidget {
       color: getColor(),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(8.r),
-        side: BorderSide.none,
+        side: isOutlined
+            ? const BorderSide(color: ColorApp.red, width: 1)
+            : BorderSide.none,
       ),
       child: InkWell(
         onTap: _isEnabled && !isLoading ? onTap : null,
         customBorder: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.r),
-          side: BorderSide.none,
+          side: isOutlined
+              ? const BorderSide(color: ColorApp.red, width: 1)
+              : BorderSide.none,
         ),
         overlayColor: WidgetStateProperty.all(getFocusColor()),
         focusColor: getFocusColor(),
@@ -96,11 +117,7 @@ class ButtonWidget extends StatelessWidget {
                       ],
                       Text(
                         text,
-                        style: _isEnabled
-                            ? isPrimary
-                                ? TypographyApp.text1.bold.white
-                                : TypographyApp.text1.bold.grey
-                            : TypographyApp.text1.bold.black,
+                        style: getTextStyle(),
                       )
                     ],
                   ),
@@ -108,5 +125,15 @@ class ButtonWidget extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  TextStyle getTextStyle() {
+    return _isEnabled
+        ? isPrimary
+            ? TypographyApp.text1.bold.white
+            : isOutlined
+                ? TypographyApp.text1.bold.red
+                : TypographyApp.text1.bold.grey
+        : TypographyApp.text1.bold.black;
   }
 }
