@@ -34,3 +34,4 @@ export 'dashboard/feed/feed_page.dart';
 export 'dashboard/wira_leader/wira_leader_page.dart';
 /// account
 export 'dashboard/account/account_page.dart';
+export 'dashboard/account/widgets/widgets.dart';
