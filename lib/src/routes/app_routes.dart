@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:indowira/src/core/core.dart';
+import 'package:indowira/src/core/presentation/dashboard/account/settings_page/settings_page.dart';
 import 'package:indowira/src/routes/routes.dart';
 
 enum Routes {
@@ -105,7 +106,7 @@ final goRouterProvider = Provider<GoRouter>(
             GoRoute(
               path: 'setting',
               name: Routes.setting.name,
-              builder: (context, state) => const DashboardPage(tabIndex: 3),
+              builder: (context, state) => const SettingsPage(),
             ),
           ],
         ),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:indowira/gen/assets.gen.dart';
 import 'package:indowira/src/constants/constants.dart';
 import 'package:indowira/src/constants/themes/themes.dart';
+import 'package:indowira/src/core/presentation/dashboard/account/settings_page/settings_page.dart';
+import 'package:indowira/src/core/presentation/dashboard/account/transaksiku_page/transaksiku_page.dart';
 import 'package:indowira/src/shared/extensions/extensions.dart';
 import 'package:indowira/src/widgets/widgets.dart';
 
@@ -20,25 +22,25 @@ class OptionProfileSection extends StatelessWidget {
           OptionProfileListTile(
             icon: Assets.icons.account,
             title: "MyApp",
-            onTap: () {},
+            widget: const SettingsPage(),
           ),
           Gap.h12,
           OptionProfileListTile(
             icon: Assets.icons.transaction,
             title: "Transaksiku",
-            onTap: () {},
+            widget: const TransaksikuPage(),
           ),
           Gap.h12,
           OptionProfileListTile(
             icon: Assets.icons.settings,
             title: "Settings",
-            onTap: () {},
+            widget: const SettingsPage(),
           ),
           Gap.h12,
           OptionProfileListTile(
             icon: Assets.icons.logout,
             title: "Logout",
-            onTap: () {},
+            widget: const SettingsPage(),
             hasRightArrow: false,
           ),
         ],
@@ -51,19 +53,23 @@ class OptionProfileListTile extends StatelessWidget {
   final SvgGenImage icon;
   final String title;
   final bool hasRightArrow;
-  final VoidCallback? onTap;
-  const OptionProfileListTile({
-    super.key,
-    required this.icon,
-    required this.title,
-    this.hasRightArrow = true,
-    this.onTap,
-  });
+  final Widget widget;
+  const OptionProfileListTile(
+      {super.key,
+      required this.icon,
+      required this.title,
+      this.hasRightArrow = true,
+      required this.widget});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => widget),
+        );
+      },
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
