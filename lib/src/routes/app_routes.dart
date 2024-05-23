@@ -16,6 +16,7 @@ enum Routes {
   feed,
   wireLeader,
   account,
+  setting,
 }
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -100,6 +101,13 @@ final goRouterProvider = Provider<GoRouter>(
           path: '/account',
           name: Routes.account.name,
           builder: (context, state) => const DashboardPage(tabIndex: 4),
+          routes: [
+            GoRoute(
+              path: 'setting',
+              name: Routes.setting.name,
+              builder: (context, state) => const DashboardPage(tabIndex: 3),
+            ),
+          ],
         ),
       ],
       errorBuilder: (context, state) => ErrorPage(
