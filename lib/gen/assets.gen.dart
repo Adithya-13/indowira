@@ -37,13 +37,34 @@ class $AssetsIconsGen {
   /// File path: assets/icons/home.svg
   SvgGenImage get home => const SvgGenImage('assets/icons/home.svg');
 
+  /// File path: assets/icons/logout.svg
+  SvgGenImage get logout => const SvgGenImage('assets/icons/logout.svg');
+
+  /// File path: assets/icons/settings.svg
+  SvgGenImage get settings => const SvgGenImage('assets/icons/settings.svg');
+
+  /// File path: assets/icons/transaction.svg
+  SvgGenImage get transaction =>
+      const SvgGenImage('assets/icons/transaction.svg');
+
   /// File path: assets/icons/wire_leader.svg
   SvgGenImage get wireLeader =>
       const SvgGenImage('assets/icons/wire_leader.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values =>
-      [notification, search, account, action, archive, feed, home, wireLeader];
+  List<SvgGenImage> get values => [
+        notification,
+        search,
+        account,
+        action,
+        archive,
+        feed,
+        home,
+        logout,
+        settings,
+        transaction,
+        wireLeader
+      ];
 }
 
 class $AssetsImagesGen {
