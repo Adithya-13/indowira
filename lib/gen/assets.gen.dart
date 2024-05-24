@@ -40,6 +40,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/logout.svg
   SvgGenImage get logout => const SvgGenImage('assets/icons/logout.svg');
 
+  /// File path: assets/icons/search_reverse.svg
+  SvgGenImage get searchReverse =>
+      const SvgGenImage('assets/icons/search_reverse.svg');
+
   /// File path: assets/icons/settings.svg
   SvgGenImage get settings => const SvgGenImage('assets/icons/settings.svg');
 
@@ -51,6 +55,9 @@ class $AssetsIconsGen {
   SvgGenImage get wireLeader =>
       const SvgGenImage('assets/icons/wire_leader.svg');
 
+  SvgGenImage get search_reverse =>
+      const SvgGenImage('assets/icons/search_reverse.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
         notification,
@@ -61,6 +68,7 @@ class $AssetsIconsGen {
         feed,
         home,
         logout,
+        searchReverse,
         settings,
         transaction,
         wireLeader

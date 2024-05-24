@@ -12,6 +12,7 @@ enum ButtonType {
 
 class ButtonWidget extends StatelessWidget {
   final ButtonType buttonType;
+  final double? width;
   final String text;
   final Function()? onTap;
   final bool isLoading;
@@ -22,6 +23,7 @@ class ButtonWidget extends StatelessWidget {
     super.key,
     required this.buttonType,
     required this.text,
+    this.width,
     this.onTap,
     this.isLoading = false,
     this.prefix,
@@ -29,6 +31,7 @@ class ButtonWidget extends StatelessWidget {
   }) : _isEnabled = isEnabled ?? onTap != null;
 
   const ButtonWidget.primary({
+    this.width,
     super.key,
     this.onTap,
     this.isLoading = false,
@@ -39,6 +42,7 @@ class ButtonWidget extends StatelessWidget {
         _isEnabled = isEnabled ?? onTap != null;
 
   const ButtonWidget.outlined({
+    this.width,
     super.key,
     this.onTap,
     this.isLoading = false,
@@ -49,6 +53,7 @@ class ButtonWidget extends StatelessWidget {
         _isEnabled = isEnabled ?? onTap != null;
 
   const ButtonWidget.secondary({
+    this.width,
     super.key,
     this.onTap,
     this.isLoading = false,
@@ -78,49 +83,52 @@ class ButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: getColor(),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8.r),
-        side: isOutlined
-            ? const BorderSide(color: ColorApp.red, width: 1)
-            : BorderSide.none,
-      ),
-      child: InkWell(
-        onTap: _isEnabled && !isLoading ? onTap : null,
-        customBorder: RoundedRectangleBorder(
+    return SizedBox(
+      width: width,
+      child: Material(
+        color: getColor(),
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.r),
           side: isOutlined
               ? const BorderSide(color: ColorApp.red, width: 1)
               : BorderSide.none,
         ),
-        overlayColor: WidgetStateProperty.all(getFocusColor()),
-        focusColor: getFocusColor(),
-        child: Container(
-          padding: EdgeInsets.symmetric(
-            horizontal: SizeApp.w28,
-            vertical: SizeApp.h8,
+        child: InkWell(
+          onTap: _isEnabled && !isLoading ? onTap : null,
+          customBorder: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8.r),
+            side: isOutlined
+                ? const BorderSide(color: ColorApp.red, width: 1)
+                : BorderSide.none,
           ),
-          child: Center(
-            child: isLoading
-                ? SizedBox(
-                    height: SizeApp.customHeight(22),
-                    width: SizeApp.customHeight(22),
-                    child: const LoadingWidget(),
-                  )
-                : Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      if (prefix != null) ...[
-                        prefix!,
-                        Gap.w8,
+          overlayColor: WidgetStateProperty.all(getFocusColor()),
+          focusColor: getFocusColor(),
+          child: Container(
+            padding: EdgeInsets.symmetric(
+              horizontal: SizeApp.w28,
+              vertical: SizeApp.h8,
+            ),
+            child: Center(
+              child: isLoading
+                  ? SizedBox(
+                      height: SizeApp.customHeight(22),
+                      width: SizeApp.customHeight(22),
+                      child: const LoadingWidget(),
+                    )
+                  : Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        if (prefix != null) ...[
+                          prefix!,
+                          Gap.w8,
+                        ],
+                        Text(
+                          text,
+                          style: getTextStyle(),
+                        )
                       ],
-                      Text(
-                        text,
-                        style: getTextStyle(),
-                      )
-                    ],
-                  ),
+                    ),
+            ),
           ),
         ),
       ),
