@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:indowira/src/constants/constants.dart';
 import 'package:indowira/src/constants/themes/themes.dart';
 import 'package:indowira/src/core/core.dart';
+import 'package:indowira/src/core/presentation/dashboard/account/settings_page/general_information/generalInformation_page.dart';
 import 'package:indowira/src/widgets/widgets.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -33,21 +34,25 @@ class SettingsPage extends StatelessWidget {
           SettingsListTile(
             title: 'General Information',
             desc: 'Profile foto, name & Language',
+            widget: GeneralInformation(),
           ),
           CustomDivider(),
           SettingsListTile(
             title: 'Account & Apps',
             desc: 'Connected social ac',
+            widget: GeneralInformation(),
           ),
           CustomDivider(),
           SettingsListTile(
             title: 'Security',
             desc: 'Outdoor advertising is a low budget',
+            widget: GeneralInformation(),
           ),
           CustomDivider(),
           SettingsListTile(
             title: 'Notification',
             desc: 'Outdoor advertising is a low budget',
+            widget: GeneralInformation(),
           ),
           CustomDivider(),
         ],

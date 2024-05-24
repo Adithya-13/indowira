@@ -11,7 +11,7 @@ enum InputFormType {
 
 class InputFormWidget extends StatelessWidget {
   final TextEditingController controller;
-  final String hintText;
+  final String? hintText;
   final Function(String value)? onChanged;
   final bool isObscure;
   final Function()? onObscureTap;
@@ -25,7 +25,7 @@ class InputFormWidget extends StatelessWidget {
   const InputFormWidget({
     super.key,
     required this.controller,
-    required this.hintText,
+    this.hintText,
     this.onChanged,
     this.errorText,
     this.validator,
@@ -82,7 +82,8 @@ class InputFormWidget extends StatelessWidget {
         hintText: hintText,
         hintStyle: TypographyApp.text1.grey,
         prefixIcon: prefix,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
           borderSide: const BorderSide(
