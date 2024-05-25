@@ -21,8 +21,8 @@ class ProfileGeneralSection extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              width: 70,
-              height: 70,
+              width: SizeApp.w72,
+              height: SizeApp.w72,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(70),
                 color: Colors.grey,
@@ -41,7 +41,7 @@ class ProfileGeneralSection extends StatelessWidget {
         ),
         Gap.h32,
         ButtonWidget.outlined(
-          width: 140,
+          width: SizeApp.customWidth(140),
           text: "Ubah Foto",
           onTap: () {},
         )

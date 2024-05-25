@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:indowira/src/constants/constants.dart';
 import 'package:indowira/src/constants/themes/themes.dart';
 import 'package:indowira/src/core/core.dart';
-import 'package:indowira/src/core/presentation/dashboard/account/settings_page/general_information/generalInformation_page.dart';
+import 'package:indowira/src/routes/routes.dart';
 import 'package:indowira/src/widgets/widgets.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -27,34 +28,42 @@ class SettingsPage extends StatelessWidget {
           ),
         ),
       ),
-      body: const Column(
+      body: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SettingsListTile(
             title: 'General Information',
             desc: 'Profile foto, name & Language',
-            widget: GeneralInformation(),
+            onTap: () {
+              context.pushNamed(Routes.generalInformation.name);
+            },
           ),
-          CustomDivider(),
+          const CustomDivider(),
           SettingsListTile(
             title: 'Account & Apps',
             desc: 'Connected social ac',
-            widget: GeneralInformation(),
+            onTap: () {
+              context.pushNamed(Routes.generalInformation.name);
+            },
           ),
-          CustomDivider(),
+          const CustomDivider(),
           SettingsListTile(
             title: 'Security',
             desc: 'Outdoor advertising is a low budget',
-            widget: GeneralInformation(),
+            onTap: () {
+              context.pushNamed(Routes.generalInformation.name);
+            },
           ),
-          CustomDivider(),
+          const CustomDivider(),
           SettingsListTile(
             title: 'Notification',
             desc: 'Outdoor advertising is a low budget',
-            widget: GeneralInformation(),
+            onTap: () {
+              context.pushNamed(Routes.generalInformation.name);
+            },
           ),
-          CustomDivider(),
+          const CustomDivider(),
         ],
       ),
     );

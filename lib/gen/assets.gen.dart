@@ -55,9 +55,6 @@ class $AssetsIconsGen {
   SvgGenImage get wireLeader =>
       const SvgGenImage('assets/icons/wire_leader.svg');
 
-  SvgGenImage get search_reverse =>
-      const SvgGenImage('assets/icons/search_reverse.svg');
-
   /// List of all assets
   List<SvgGenImage> get values => [
         notification,
@@ -109,6 +106,9 @@ class $AssetsSvgsGen {
   SvgGenImage get artikelSheet =>
       const SvgGenImage('assets/svgs/artikel_sheet.svg');
 
+  /// File path: assets/svgs/attachment.svg
+  SvgGenImage get attachment => const SvgGenImage('assets/svgs/attachment.svg');
+
   /// File path: assets/svgs/charity_drawer.svg
   SvgGenImage get charityDrawer =>
       const SvgGenImage('assets/svgs/charity_drawer.svg');
@@ -116,6 +116,12 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/charity_sheet.svg
   SvgGenImage get charitySheet =>
       const SvgGenImage('assets/svgs/charity_sheet.svg');
+
+  /// File path: assets/svgs/comment.svg
+  SvgGenImage get comment => const SvgGenImage('assets/svgs/comment.svg');
+
+  /// File path: assets/svgs/emoji.svg
+  SvgGenImage get emoji => const SvgGenImage('assets/svgs/emoji.svg');
 
   /// File path: assets/svgs/event_sheet.svg
   SvgGenImage get eventSheet =>
@@ -149,6 +155,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/grup_sheet.svg
   SvgGenImage get grupSheet => const SvgGenImage('assets/svgs/grup_sheet.svg');
 
+  /// File path: assets/svgs/image.svg
+  SvgGenImage get image => const SvgGenImage('assets/svgs/image.svg');
+
   /// File path: assets/svgs/job_sheet.svg
   SvgGenImage get jobSheet => const SvgGenImage('assets/svgs/job_sheet.svg');
 
@@ -167,6 +176,12 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/laporan_drawer.svg
   SvgGenImage get laporanDrawer =>
       const SvgGenImage('assets/svgs/laporan_drawer.svg');
+
+  /// File path: assets/svgs/like.svg
+  SvgGenImage get like => const SvgGenImage('assets/svgs/like.svg');
+
+  /// File path: assets/svgs/link.svg
+  SvgGenImage get link => const SvgGenImage('assets/svgs/link.svg');
 
   /// File path: assets/svgs/member_drawer.svg
   SvgGenImage get memberDrawer =>
@@ -199,6 +214,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/reseller_drawer.svg
   SvgGenImage get resellerDrawer =>
       const SvgGenImage('assets/svgs/reseller_drawer.svg');
+
+  /// File path: assets/svgs/share.svg
+  SvgGenImage get share => const SvgGenImage('assets/svgs/share.svg');
 
   /// File path: assets/svgs/splash.svg
   SvgGenImage get splash => const SvgGenImage('assets/svgs/splash.svg');
@@ -257,8 +275,11 @@ class $AssetsSvgsGen {
   /// List of all assets
   List<SvgGenImage> get values => [
         artikelSheet,
+        attachment,
         charityDrawer,
         charitySheet,
+        comment,
+        emoji,
         eventSheet,
         facebook,
         feedSheet,
@@ -268,11 +289,14 @@ class $AssetsSvgsGen {
         founderSekolah,
         google,
         grupSheet,
+        image,
         jobSheet,
         kelasSheet,
         komunitasDrawer,
         komunitasSheet,
         laporanDrawer,
+        like,
+        link,
         memberDrawer,
         membershipDrawer,
         mentorDrawer,
@@ -281,6 +305,7 @@ class $AssetsSvgsGen {
         pengurusDrawer,
         projectSheet,
         resellerDrawer,
+        share,
         splash,
         startUpDrawer,
         supportDrawer,

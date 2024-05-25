@@ -37,6 +37,7 @@ export 'dashboard/home/widgets/widgets.dart';
 
 /// feed
 export 'dashboard/feed/feed_page.dart';
+export 'dashboard/feed/create_feed/create_feed_page.dart';
 
 /// wire_leader
 export 'dashboard/wira_leader/wira_leader_page.dart';

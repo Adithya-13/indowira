@@ -3,9 +3,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:indowira/gen/assets.gen.dart';
 import 'package:indowira/src/constants/constants.dart';
 import 'package:indowira/src/core/core.dart';
+import 'package:indowira/src/routes/routes.dart';
 import 'package:indowira/src/shared/shared.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
@@ -279,6 +281,10 @@ class CustomNavBar extends StatelessWidget {
                                   child: ActionSheetButton(
                                     svg: Assets.svgs.feedSheet,
                                     text: "Feed",
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                      context.pushNamed(Routes.createFeed.name);
+                                    },
                                   ),
                                 ),
                                 Expanded(

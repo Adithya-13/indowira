@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:indowira/gen/assets.gen.dart';
 import 'package:indowira/src/constants/constants.dart';
@@ -27,17 +26,9 @@ class HomePage extends StatelessWidget {
           Assets.icons.archive.svg(),
           Gap.w16,
         ],
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(8),
-          child: Column(
-            children: [
-              Container(
-                width: double.infinity,
-                height: 1,
-                color: ColorApp.grey,
-              ),
-            ],
-          ),
+        bottom: const PreferredSize(
+          preferredSize: Size.fromHeight(8),
+          child: CustomDivider(),
         ),
       ),
       body: Padding(
@@ -87,5 +78,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-

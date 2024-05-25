@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:indowira/src/constants/constants.dart';
 import 'package:indowira/src/constants/themes/themes.dart';
-import 'package:indowira/src/constants/themes/typography_app.dart';
 import 'package:indowira/src/core/core.dart';
 import 'package:indowira/src/shared/extensions/extensions.dart';
 
@@ -29,9 +28,9 @@ class TransactionSection extends StatelessWidget {
             ],
           ),
         ),
-        const RowEachSection(),
-        const RowEachSection(),
-        const RowEachSection(),
+        const TransactionListTile(),
+        const TransactionListTile(),
+        const TransactionListTile(),
       ],
     );
   }

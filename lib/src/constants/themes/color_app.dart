@@ -12,6 +12,7 @@ class ColorApp {
   static const Color lightPink = Color.fromARGB(37, 254, 77, 151);
   static const Color pink = Color(0xFFFE4D97);
   static const Color lightGrey = Color(0xFFF2F4F6);
+  static const Color divider = Color(0xFFE8ECEF);
   static const Color grey = Color(0xFF778CA2);
   static const Color midGrey = Color(0xFFE8ECEF);
   static const Color green = Color(0xFF6DD230);
