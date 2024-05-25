@@ -22,17 +22,9 @@ class AccountPage extends StatelessWidget {
           Assets.icons.archive.svg(),
           Gap.w16,
         ],
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(8),
-          child: Column(
-            children: [
-              Container(
-                width: double.infinity,
-                height: 1,
-                color: ColorApp.grey,
-              ),
-            ],
-          ),
+        bottom: const PreferredSize(
+          preferredSize: Size.fromHeight(8),
+          child: CustomDivider(),
         ),
       ),
       body: Column(

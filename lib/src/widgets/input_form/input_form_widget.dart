@@ -21,6 +21,7 @@ class InputFormWidget extends StatelessWidget {
   final String? errorText;
   final String? Function(String?)? validator;
   final Widget? prefix;
+  final int? maxLines;
 
   const InputFormWidget({
     super.key,
@@ -30,6 +31,7 @@ class InputFormWidget extends StatelessWidget {
     this.errorText,
     this.validator,
     this.prefix,
+    this.maxLines,
   })  : inputFormType = InputFormType.normal,
         isObscure = false,
         readOnly = false,
@@ -44,6 +46,7 @@ class InputFormWidget extends StatelessWidget {
     this.errorText,
     this.validator,
     this.prefix,
+    this.maxLines,
   })  : inputFormType = InputFormType.button,
         isObscure = false,
         readOnly = true,
@@ -60,6 +63,7 @@ class InputFormWidget extends StatelessWidget {
     this.errorText,
     this.validator,
     this.prefix,
+    this.maxLines = 1,
   })  : inputFormType = InputFormType.password,
         readOnly = false,
         onTap = null;
@@ -74,6 +78,7 @@ class InputFormWidget extends StatelessWidget {
       obscureText: isObscure,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: validator,
+      maxLines: maxLines,
       cursorColor: ColorApp.grey,
       decoration: InputDecoration(
         filled: true,

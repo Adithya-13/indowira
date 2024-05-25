@@ -15,12 +15,24 @@ class HeaderTransaction extends StatelessWidget {
       height: 40,
       color: ColorApp.lightGrey,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Text("Uraian", style: TypographyApp.text1.black),
-          Text("Tanggal", style: TypographyApp.text1.black),
-          Text("Total", style: TypographyApp.text1.black),
-          Text("Status", style: TypographyApp.text1.black),
+          Gap.w8,
+          Expanded(
+            child: Text("Uraian", style: TypographyApp.text1.black),
+          ),
+          Gap.w8,
+          Expanded(
+            child: Text("Tanggal", style: TypographyApp.text1.black),
+          ),
+          Gap.w8,
+          Expanded(
+            child: Text("Total", style: TypographyApp.text1.black),
+          ),
+          Gap.w8,
+          Expanded(
+            child: Text("Status", style: TypographyApp.text1.black),
+          ),
+          Gap.w8,
         ],
       ),
     );

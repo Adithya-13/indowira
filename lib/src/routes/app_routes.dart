@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:indowira/src/core/core.dart';
+import 'package:indowira/src/core/presentation/dashboard/account/settings_page/general_information/general_information_page.dart';
 import 'package:indowira/src/core/presentation/dashboard/account/settings_page/settings_page.dart';
 import 'package:indowira/src/routes/routes.dart';
 
@@ -18,6 +19,8 @@ enum Routes {
   wireLeader,
   account,
   setting,
+  createFeed,
+  generalInformation,
 }
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -92,9 +95,16 @@ final goRouterProvider = Provider<GoRouter>(
           path: '/feed',
           name: Routes.feed.name,
           builder: (context, state) => const DashboardPage(tabIndex: 1),
+          routes: [
+            GoRoute(
+              path: 'create-feed',
+              name: Routes.createFeed.name,
+              builder: (context, state) => const CreateFeedPage(),
+            ),
+          ],
         ),
         GoRoute(
-          path: '/wire_leader',
+          path: '/wire-leader',
           name: Routes.wireLeader.name,
           builder: (context, state) => const DashboardPage(tabIndex: 3),
         ),
@@ -107,6 +117,13 @@ final goRouterProvider = Provider<GoRouter>(
               path: 'setting',
               name: Routes.setting.name,
               builder: (context, state) => const SettingsPage(),
+              routes: [
+                GoRoute(
+                  path: 'general-information',
+                  name: Routes.generalInformation.name,
+                  builder: (context, state) => const GeneralInformationPage(),
+                ),
+              ],
             ),
           ],
         ),

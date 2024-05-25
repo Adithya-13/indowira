@@ -70,11 +70,16 @@ class OptionProfileListTile extends StatelessWidget {
           MaterialPageRoute(builder: (context) => widget),
         );
       },
-      child: Padding(
+      child: Container(
         padding: const EdgeInsets.all(8.0),
+        color: ColorApp.scaffold,
         child: Row(
           children: [
-            icon.svg(),
+            icon.svg(
+              color: ColorApp.black,
+              fit: BoxFit.fitWidth,
+              width: SizeApp.w16,
+            ),
             Gap.w8,
             Text(
               title,
