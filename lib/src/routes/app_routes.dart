@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:indowira/src/core/core.dart';
+import 'package:indowira/src/core/presentation/dashboard/account/settings_page/account_and_apps/account_and_apps_page.dart';
 import 'package:indowira/src/core/presentation/dashboard/account/settings_page/general_information/general_information_page.dart';
+import 'package:indowira/src/core/presentation/dashboard/account/settings_page/nofications/notifications_page.dart';
+import 'package:indowira/src/core/presentation/dashboard/account/settings_page/security/security_pages.dart';
 import 'package:indowira/src/core/presentation/dashboard/account/settings_page/settings_page.dart';
 import 'package:indowira/src/routes/routes.dart';
 
@@ -21,6 +24,9 @@ enum Routes {
   setting,
   createFeed,
   generalInformation,
+  accountApps,
+  security,
+  notification,
 }
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -122,6 +128,21 @@ final goRouterProvider = Provider<GoRouter>(
                   path: 'general-information',
                   name: Routes.generalInformation.name,
                   builder: (context, state) => const GeneralInformationPage(),
+                ),
+                GoRoute(
+                  path: 'account-and-apps',
+                  name: Routes.accountApps.name,
+                  builder: (context, state) => const AccountAndPages(),
+                ),
+                GoRoute(
+                  path: 'security',
+                  name: Routes.security.name,
+                  builder: (context, state) => const SecurityPages(),
+                ),
+                GoRoute(
+                  path: 'notification',
+                  name: Routes.notification.name,
+                  builder: (context, state) => const NotificationPages(),
                 ),
               ],
             ),

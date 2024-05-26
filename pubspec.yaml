@@ -1,11 +1,11 @@
 name: indowira
 description: "A new Flutter project."
-publish_to: 'none' 
+publish_to: "none"
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.4.0 <4.0.0'
+  sdk: ">=3.4.0 <4.0.0"
 
 dependencies:
   flutter:
@@ -26,6 +26,7 @@ dependencies:
   persistent_bottom_nav_bar_v2: ^5.2.3
   modal_bottom_sheet: ^3.0.0
   auto_size_text: ^3.0.0
+  toggle_switch: ^2.3.0
 
 dev_dependencies:
   flutter_test:
@@ -42,7 +43,6 @@ flutter_native_splash:
   color: "#F8FAFB"
   android_12:
     color: "#F8FAFB"
-
 
 flutter:
   uses-material-design: true
