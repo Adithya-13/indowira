@@ -44,7 +44,7 @@ class SettingsPage extends StatelessWidget {
             title: 'Account & Apps',
             desc: 'Connected social ac',
             onTap: () {
-              context.pushNamed(Routes.generalInformation.name);
+              context.pushNamed(Routes.accountApps.name);
             },
           ),
           const CustomDivider(),
@@ -52,7 +52,7 @@ class SettingsPage extends StatelessWidget {
             title: 'Security',
             desc: 'Outdoor advertising is a low budget',
             onTap: () {
-              context.pushNamed(Routes.generalInformation.name);
+              context.pushNamed(Routes.security.name);
             },
           ),
           const CustomDivider(),
@@ -60,7 +60,7 @@ class SettingsPage extends StatelessWidget {
             title: 'Notification',
             desc: 'Outdoor advertising is a low budget',
             onTap: () {
-              context.pushNamed(Routes.generalInformation.name);
+              context.pushNamed(Routes.notification.name);
             },
           ),
           const CustomDivider(),

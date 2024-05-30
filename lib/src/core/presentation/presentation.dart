@@ -48,3 +48,4 @@ export 'dashboard/account/widgets/widgets.dart';
 export 'dashboard/account/settings_page/widgets/widgets.dart';
 export 'dashboard/account/transaksiku_page/widgets/widgets.dart';
 export 'dashboard/account/settings_page/general_information/widgets/widgets.dart';
+export 'dashboard/account/settings_page/nofications/widgets/widgets.dart';
