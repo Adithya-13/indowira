@@ -45,31 +45,47 @@ class UserSection extends StatelessWidget {
             style: TypographyApp.text1,
           ),
           Gap.h12,
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              color: ColorApp.yellow,
-            ),
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16,
-              vertical: 8,
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  style: TypographyApp.text1.white,
-                  "Upgrade Plan",
-                ),
-                Gap.w8,
-                const Icon(
-                  Icons.star_rounded,
-                  color: ColorApp.white,
-                ),
-              ],
-            ),
+          const YellowButtonStars(
+            text: "Upgrade Plan",
           ),
           Gap.h16,
+        ],
+      ),
+    );
+  }
+}
+
+class YellowButtonStars extends StatelessWidget {
+  final String text;
+
+  const YellowButtonStars({
+    required this.text,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        color: ColorApp.yellow,
+      ),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 16,
+        vertical: 8,
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            style: TypographyApp.text1.white,
+            text,
+          ),
+          Gap.w8,
+          const Icon(
+            Icons.star_rounded,
+            color: ColorApp.white,
+          ),
         ],
       ),
     );

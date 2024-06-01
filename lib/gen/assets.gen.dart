@@ -31,6 +31,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/archive.svg
   SvgGenImage get archive => const SvgGenImage('assets/icons/archive.svg');
 
+  /// File path: assets/icons/comment.svg
+  SvgGenImage get comment => const SvgGenImage('assets/icons/comment.svg');
+
   /// File path: assets/icons/feed.svg
   SvgGenImage get feed => const SvgGenImage('assets/icons/feed.svg');
 
@@ -62,6 +65,7 @@ class $AssetsIconsGen {
         account,
         action,
         archive,
+        comment,
         feed,
         home,
         logout,
