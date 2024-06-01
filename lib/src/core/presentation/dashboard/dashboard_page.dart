@@ -327,6 +327,11 @@ class CustomNavBar extends StatelessWidget {
                                   child: ActionSheetButton(
                                     svg: Assets.svgs.forumSheet,
                                     text: "Forum",
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                      context
+                                          .pushNamed(Routes.createForum.name);
+                                    },
                                   ),
                                 ),
                               ],
@@ -357,6 +362,11 @@ class CustomNavBar extends StatelessWidget {
                                   child: ActionSheetButton(
                                     svg: Assets.svgs.mentoringSheet,
                                     text: "Mentoring",
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                      context.pushNamed(
+                                          Routes.createMentoring.name);
+                                    },
                                   ),
                                 ),
                               ],

@@ -7,6 +7,8 @@ import 'package:indowira/src/core/presentation/dashboard/account/settings_page/g
 import 'package:indowira/src/core/presentation/dashboard/account/settings_page/nofications/notifications_page.dart';
 import 'package:indowira/src/core/presentation/dashboard/account/settings_page/security/security_pages.dart';
 import 'package:indowira/src/core/presentation/dashboard/account/settings_page/settings_page.dart';
+import 'package:indowira/src/core/presentation/dashboard/feed/create_forum_page/create_forum_page.dart';
+import 'package:indowira/src/core/presentation/dashboard/feed/create_mentoring/create_mentoring.dart';
 import 'package:indowira/src/routes/routes.dart';
 
 enum Routes {
@@ -27,6 +29,8 @@ enum Routes {
   accountApps,
   security,
   notification,
+  createForum,
+  createMentoring,
 }
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -106,6 +110,16 @@ final goRouterProvider = Provider<GoRouter>(
               path: 'create-feed',
               name: Routes.createFeed.name,
               builder: (context, state) => const CreateFeedPage(),
+            ),
+            GoRoute(
+              path: 'create-forum',
+              name: Routes.createForum.name,
+              builder: (context, state) => const CreateForumPage(),
+            ),
+            GoRoute(
+              path: 'create-mentoring',
+              name: Routes.createMentoring.name,
+              builder: (context, state) => const CreateMentoringPage(),
             ),
           ],
         ),
