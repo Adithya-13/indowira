@@ -12,13 +12,18 @@ import 'package:indowira/src/core/presentation/dashboard/feed/create_mentoring/c
 import 'package:indowira/src/routes/routes.dart';
 
 enum Routes {
+  // common
   splash,
+
+  // auth
   login,
   register,
   signAs,
   emailConfirmation,
   whatsappConfirmation,
   passwordRecovery,
+
+  // dashboard
   home,
   feed,
   wireLeader,
@@ -31,6 +36,23 @@ enum Routes {
   notification,
   createForum,
   createMentoring,
+
+  // community
+  profileMember,
+  communityDetail,
+  directoryMember,
+  communityMembership,
+
+  // membership
+  membership,
+  paymentMembership,
+
+  // announcement
+  announcement,
+  addAnnouncement,
+
+  // report
+  reportDashboard,
 }
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -100,6 +122,58 @@ final goRouterProvider = Provider<GoRouter>(
           path: '/home',
           name: Routes.home.name,
           builder: (context, state) => const DashboardPage(tabIndex: 0),
+          routes: [
+            GoRoute(
+              path: 'profile-member',
+              name: Routes.profileMember.name,
+              builder: (context, state) => const ProfileMemberPage(),
+            ),
+            GoRoute(
+              path: 'community-detail',
+              name: Routes.communityDetail.name,
+              builder: (context, state) => const CommunityDetailPage(),
+            ),
+            GoRoute(
+              path: 'directory-member',
+              name: Routes.directoryMember.name,
+              builder: (context, state) => const DirectoryMemberPage(),
+            ),
+            GoRoute(
+              path: 'community-membership',
+              name: Routes.communityMembership.name,
+              builder: (context, state) => const CommunityMembershipPage(),
+            ),
+            GoRoute(
+              path: 'membership',
+              name: Routes.membership.name,
+              builder: (context, state) => const MembershipPage(),
+              routes: [
+                GoRoute(
+                  path: 'payment-membership',
+                  name: Routes.paymentMembership.name,
+                  builder: (context, state) => const PaymentMembershipPage(),
+                ),
+              ],
+            ),
+            GoRoute(
+              path: 'announcement',
+              name: Routes.announcement.name,
+              builder: (context, state) => const AnnouncementPage(),
+              routes: [
+                GoRoute(
+                  path: 'add-announcement',
+                  name: Routes.addAnnouncement.name,
+                  builder: (context, state) => const AddAnnouncementPage(),
+                ),
+              ],
+            ),
+            GoRoute(
+              path: 'report-dashboard',
+              name: Routes.reportDashboard.name,
+              builder: (context, state) => const ReportDashboardPage(),
+              routes: const [],
+            ),
+          ],
         ),
         GoRoute(
           path: '/feed',
