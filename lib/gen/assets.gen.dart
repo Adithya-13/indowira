@@ -215,6 +215,22 @@ class $AssetsSvgsGen {
   SvgGenImage get projectSheet =>
       const SvgGenImage('assets/svgs/project_sheet.svg');
 
+  /// File path: assets/svgs/report_business_progress.svg
+  SvgGenImage get reportBusinessProgress =>
+      const SvgGenImage('assets/svgs/report_business_progress.svg');
+
+  /// File path: assets/svgs/report_community.svg
+  SvgGenImage get reportCommunity =>
+      const SvgGenImage('assets/svgs/report_community.svg');
+
+  /// File path: assets/svgs/report_social_impact.svg
+  SvgGenImage get reportSocialImpact =>
+      const SvgGenImage('assets/svgs/report_social_impact.svg');
+
+  /// File path: assets/svgs/report_syirkah.svg
+  SvgGenImage get reportSyirkah =>
+      const SvgGenImage('assets/svgs/report_syirkah.svg');
+
   /// File path: assets/svgs/reseller_drawer.svg
   SvgGenImage get resellerDrawer =>
       const SvgGenImage('assets/svgs/reseller_drawer.svg');
@@ -308,6 +324,10 @@ class $AssetsSvgsGen {
         pengumumanDrawer,
         pengurusDrawer,
         projectSheet,
+        reportBusinessProgress,
+        reportCommunity,
+        reportSocialImpact,
+        reportSyirkah,
         resellerDrawer,
         share,
         splash,

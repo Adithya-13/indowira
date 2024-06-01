@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:indowira/src/constants/constants.dart';
@@ -115,19 +116,26 @@ class ButtonWidget extends StatelessWidget {
                       width: SizeApp.customHeight(22),
                       child: const LoadingWidget(),
                     )
-                  : Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        if (prefix != null) ...[
-                          prefix!,
-                          Gap.w8,
-                        ],
-                        Text(
+                  : prefix != null
+                      ? Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            prefix!,
+                            Gap.w8,
+                            AutoSizeText(
+                              text,
+                              style: getTextStyle(),
+                              maxLines: 1,
+                              minFontSize: 8,
+                            )
+                          ],
+                        )
+                      : AutoSizeText(
                           text,
                           style: getTextStyle(),
-                        )
-                      ],
-                    ),
+                          maxLines: 1,
+                          minFontSize: 8,
+                        ),
             ),
           ),
         ),

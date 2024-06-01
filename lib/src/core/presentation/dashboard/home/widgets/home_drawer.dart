@@ -1,8 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:indowira/gen/assets.gen.dart';
 import 'package:indowira/src/constants/constants.dart';
+import 'package:indowira/src/routes/routes.dart';
 import 'package:indowira/src/shared/extensions/extensions.dart';
 import 'package:indowira/src/widgets/widgets.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
@@ -85,47 +87,61 @@ class HomeDrawer extends StatelessWidget {
                                   title: "Alumni ITB 2020",
                                   img: Assets.images.freelancerLogo.path,
                                   createdBy: 'Hery',
-                                  onTap: () {},
+                                  onTap: () {
+                                    context.goNamed(Routes.profileMember.name);
+                                  },
                                 ),
                                 Gap.h16,
                                 ChangeCommunityItem(
                                   title: "Perumahan BSD",
                                   img: Assets.images.freelancerLogo.path,
                                   createdBy: 'Hery',
-                                  onTap: () {},
+                                  onTap: () {
+                                    context.goNamed(Routes.profileMember.name);
+                                  },
                                 ),
                                 Gap.h16,
                                 ChangeCommunityItem(
                                   title: "Trah Keluarga Dimas",
                                   img: Assets.images.freelancerLogo.path,
                                   createdBy: 'Hery',
-                                  onTap: () {},
+                                  onTap: () {
+                                    context.goNamed(Routes.profileMember.name);
+                                  },
                                 ),
                                 Gap.h16,
                                 ChangeCommunityItem(
                                   title: "Freelancer",
                                   img: Assets.images.freelancerLogo.path,
                                   createdBy: 'Hery',
-                                  onTap: () {},
+                                  onTap: () {
+                                    context.goNamed(Routes.profileMember.name);
+                                  },
                                 ),
                                 Gap.h16,
                                 ChangeCommunityItem(
                                   title: "Sepedaan",
                                   img: Assets.images.sepedaanLogo.path,
                                   createdBy: 'Hery',
-                                  onTap: () {},
+                                  onTap: () {
+                                    context.goNamed(Routes.profileMember.name);
+                                  },
                                 ),
                                 Gap.h16,
                                 ChangeCommunityItem(
                                   title: "Masak Asik",
                                   img: Assets.images.masakAsikLogo.path,
                                   createdBy: 'Hery',
-                                  onTap: () {},
+                                  onTap: () {
+                                    context.goNamed(Routes.profileMember.name);
+                                  },
                                 ),
                                 Gap.h16,
                                 ButtonWidget.primary(
                                   text: "BUAT KOMUNITAS",
-                                  onTap: () {},
+                                  onTap: () {
+                                    context.goNamed(Routes.profileMember.name);
+                                  },
                                 ),
                               ],
                             ),
@@ -214,6 +230,9 @@ class HomeDrawer extends StatelessWidget {
                       child: ActionDrawerButton(
                         svg: Assets.svgs.memberDrawer,
                         text: "Member",
+                        onTap: () {
+                          context.pushNamed(Routes.directoryMember.name);
+                        },
                       ),
                     ),
                   ],
@@ -225,6 +244,9 @@ class HomeDrawer extends StatelessWidget {
                       child: ActionDrawerButton(
                         svg: Assets.svgs.pengumumanDrawer,
                         text: "Pengumuman",
+                        onTap: () {
+                          context.pushNamed(Routes.announcement.name);
+                        },
                       ),
                     ),
                     Expanded(
@@ -237,6 +259,9 @@ class HomeDrawer extends StatelessWidget {
                       child: ActionDrawerButton(
                         svg: Assets.svgs.laporanDrawer,
                         text: "Laporan",
+                        onTap: () {
+                          context.pushNamed(Routes.reportDashboard.name);
+                        },
                       ),
                     ),
                   ],

@@ -21,7 +21,9 @@ class InputFormWidget extends StatelessWidget {
   final String? errorText;
   final String? Function(String?)? validator;
   final Widget? prefix;
+  final Widget? suffix;
   final int? maxLines;
+  final String? title;
 
   const InputFormWidget({
     super.key,
@@ -31,7 +33,9 @@ class InputFormWidget extends StatelessWidget {
     this.errorText,
     this.validator,
     this.prefix,
+    this.suffix,
     this.maxLines,
+    this.title,
   })  : inputFormType = InputFormType.normal,
         isObscure = false,
         readOnly = false,
@@ -46,7 +50,9 @@ class InputFormWidget extends StatelessWidget {
     this.errorText,
     this.validator,
     this.prefix,
+    this.suffix,
     this.maxLines,
+    this.title,
   })  : inputFormType = InputFormType.button,
         isObscure = false,
         readOnly = true,
@@ -63,7 +69,9 @@ class InputFormWidget extends StatelessWidget {
     this.errorText,
     this.validator,
     this.prefix,
+    this.suffix,
     this.maxLines = 1,
+    this.title,
   })  : inputFormType = InputFormType.password,
         readOnly = false,
         onTap = null;
@@ -72,50 +80,64 @@ class InputFormWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: controller,
-      onChanged: onChanged,
-      obscureText: isObscure,
-      autovalidateMode: AutovalidateMode.onUserInteraction,
-      validator: validator,
-      maxLines: maxLines,
-      cursorColor: ColorApp.grey,
-      decoration: InputDecoration(
-        filled: true,
-        errorText: errorText,
-        fillColor: ColorApp.white,
-        hintText: hintText,
-        hintStyle: TypographyApp.text1.grey,
-        prefixIcon: prefix,
-        contentPadding:
-            const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8.r),
-          borderSide: const BorderSide(
-            color: ColorApp.lightGrey,
-            width: 2,
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        if (title != null) ...[
+          Text(
+            title!,
+            style: TypographyApp.text1.black,
           ),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8.r),
-          borderSide: const BorderSide(
-            color: ColorApp.grey,
-            width: 2,
+          Gap.h8,
+        ],
+        TextFormField(
+          controller: controller,
+          onChanged: onChanged,
+          obscureText: isObscure,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
+          validator: validator,
+          maxLines: maxLines,
+          cursorColor: ColorApp.grey,
+          decoration: InputDecoration(
+            filled: true,
+            errorText: errorText,
+            fillColor: ColorApp.white,
+            hintText: hintText,
+            hintStyle: TypographyApp.text1.grey,
+            prefixIcon: prefix,
+            suffixIcon: suffix,
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8.r),
+              borderSide: const BorderSide(
+                color: ColorApp.divider,
+                width: 2,
+              ),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8.r),
+              borderSide: const BorderSide(
+                color: ColorApp.grey,
+                width: 2,
+              ),
+            ),
+            suffix: isPassword
+                ? GestureDetector(
+                    onTap: onObscureTap,
+                    child: Text(
+                      isObscure ? 'SHOW' : 'HIDE',
+                      style: TypographyApp.text1.grey,
+                    ),
+                  )
+                : const SizedBox.shrink(),
           ),
+          readOnly: readOnly,
+          onTap: onTap,
+          style: TypographyApp.text1.black.bold,
         ),
-        suffix: isPassword
-            ? GestureDetector(
-                onTap: onObscureTap,
-                child: Text(
-                  isObscure ? 'SHOW' : 'HIDE',
-                  style: TypographyApp.text1.grey,
-                ),
-              )
-            : const SizedBox.shrink(),
-      ),
-      readOnly: readOnly,
-      onTap: onTap,
-      style: TypographyApp.text1.black.bold,
+      ],
     );
   }
 }
