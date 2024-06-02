@@ -187,6 +187,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/link.svg
   SvgGenImage get link => const SvgGenImage('assets/svgs/link.svg');
 
+  /// File path: assets/svgs/linkedin.svg
+  SvgGenImage get linkedin => const SvgGenImage('assets/svgs/linkedin.svg');
+
   /// File path: assets/svgs/member_drawer.svg
   SvgGenImage get memberDrawer =>
       const SvgGenImage('assets/svgs/member_drawer.svg');
@@ -202,6 +205,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/mentoring_sheet.svg
   SvgGenImage get mentoringSheet =>
       const SvgGenImage('assets/svgs/mentoring_sheet.svg');
+
+  /// File path: assets/svgs/path.svg
+  SvgGenImage get path => const SvgGenImage('assets/svgs/path.svg');
 
   /// File path: assets/svgs/pengumuman_drawer.svg
   SvgGenImage get pengumumanDrawer =>
@@ -252,6 +258,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/syirkah_drawer.svg
   SvgGenImage get syirkahDrawer =>
       const SvgGenImage('assets/svgs/syirkah_drawer.svg');
+
+  /// File path: assets/svgs/twitter.svg
+  SvgGenImage get twitter => const SvgGenImage('assets/svgs/twitter.svg');
 
   /// File path: assets/svgs/usaha_drawer.svg
   SvgGenImage get usahaDrawer =>
@@ -317,10 +326,12 @@ class $AssetsSvgsGen {
         laporanDrawer,
         like,
         link,
+        linkedin,
         memberDrawer,
         membershipDrawer,
         mentorDrawer,
         mentoringSheet,
+        path,
         pengumumanDrawer,
         pengurusDrawer,
         projectSheet,
@@ -334,6 +345,7 @@ class $AssetsSvgsGen {
         startUpDrawer,
         supportDrawer,
         syirkahDrawer,
+        twitter,
         usahaDrawer,
         usahaLevel0,
         usahaLevel1,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:indowira/src/core/core.dart';
+import 'package:indowira/src/core/presentation/dashboard/account/myProfile_page/my_profile_page.dart';
 import 'package:indowira/src/core/presentation/dashboard/account/settings_page/account_and_apps/account_and_apps_page.dart';
 import 'package:indowira/src/core/presentation/dashboard/account/settings_page/general_information/general_information_page.dart';
 import 'package:indowira/src/core/presentation/dashboard/account/settings_page/nofications/notifications_page.dart';
@@ -36,6 +37,7 @@ enum Routes {
   notification,
   createForum,
   createMentoring,
+  myProfile,
 
   // community
   profileMember,
@@ -207,6 +209,11 @@ final goRouterProvider = Provider<GoRouter>(
           name: Routes.account.name,
           builder: (context, state) => const DashboardPage(tabIndex: 4),
           routes: [
+            GoRoute(
+              path: 'my-profile',
+              name: Routes.myProfile.name,
+              builder: (context, state) => const MyProfilePage(),
+            ),
             GoRoute(
               path: 'setting',
               name: Routes.setting.name,

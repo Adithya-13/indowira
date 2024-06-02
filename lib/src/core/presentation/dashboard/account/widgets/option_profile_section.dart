@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:indowira/gen/assets.gen.dart';
 import 'package:indowira/src/constants/constants.dart';
 import 'package:indowira/src/constants/themes/themes.dart';
+import 'package:indowira/src/core/presentation/dashboard/account/myProfile_page/my_profile_page.dart';
 import 'package:indowira/src/core/presentation/dashboard/account/settings_page/settings_page.dart';
 import 'package:indowira/src/core/presentation/dashboard/account/transaksiku_page/transaksiku_page.dart';
 import 'package:indowira/src/shared/extensions/extensions.dart';
@@ -21,8 +22,8 @@ class OptionProfileSection extends StatelessWidget {
           Gap.h20,
           OptionProfileListTile(
             icon: Assets.icons.account,
-            title: "MyApp",
-            widget: const SettingsPage(),
+            title: "My Profile",
+            widget: const MyProfilePage(),
           ),
           Gap.h12,
           OptionProfileListTile(
