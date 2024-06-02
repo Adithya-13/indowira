@@ -47,20 +47,29 @@ class MentoringSchedule extends StatelessWidget {
               ),
             ),
             //OPSIONAL
-            close
-                ? Container(
-                    alignment: Alignment.center,
-                    width: SizeApp.w48,
-                    height: SizeApp.h20,
-                    color: Colors.grey.shade300,
-                    child: Text(
-                      "Close",
-                      style: TypographyApp.subText1.grey.bold,
-                    ),
-                  )
-                : const SizedBox.shrink(),
+            close ? const GreyButtonClose() : const SizedBox.shrink(),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class GreyButtonClose extends StatelessWidget {
+  const GreyButtonClose({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      width: SizeApp.w48,
+      height: SizeApp.h20,
+      color: Colors.grey.shade300,
+      child: Text(
+        "Close",
+        style: TypographyApp.subText1.grey.bold,
       ),
     );
   }
