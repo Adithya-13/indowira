@@ -61,6 +61,10 @@ export 'community/community_detail/community_detail_page.dart';
 export 'community/directory_member/directory_member_page.dart';
 /// community_membership
 export 'community/community_membership/community_membership_page.dart';
+/// community_dashboard
+export 'community/community_dashboard/community_dashboard_page.dart';
+/// add_community
+export 'community/add_community/add_community_page.dart';
 
 //* MEMBERSHIP
 /// membership
@@ -79,3 +83,8 @@ export 'announcement/add_announcement/add_announcement_page.dart';
 //* REPORT
 /// report_dashboard
 export 'report/report_dashboard/report_dashboard_page.dart';
+
+//* COMMITEE
+/// commitee
+export 'commitee/commitee/commitee_page.dart';
+export 'commitee/add_commitee/add_commitee_page.dart';

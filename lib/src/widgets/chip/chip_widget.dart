@@ -1,4 +1,4 @@
-
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:indowira/src/constants/constants.dart';
 
@@ -7,12 +7,16 @@ class ChipWidget extends StatelessWidget {
   final EdgeInsets? padding;
   final Color color;
   final TextStyle? style;
+  final Widget? prefix;
+  final Widget? sufix;
   const ChipWidget({
     super.key,
     required this.title,
     this.padding,
     required this.color,
     this.style,
+    this.prefix,
+    this.sufix,
   });
 
   @override
@@ -27,10 +31,19 @@ class ChipWidget extends StatelessWidget {
             horizontal: 16,
             vertical: 8,
           ),
-      child: Text(
-        title,
-        style: style?.copyWith(color: color) ??
-            TypographyApp.text1.copyWith(color: color),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          prefix ?? const SizedBox.shrink(),
+          if (prefix != null) Gap.w4,
+          Text(
+            title,
+            style: style?.copyWith(color: color) ??
+                TypographyApp.text1.copyWith(color: color),
+          ),
+          if (sufix != null) Gap.w4,
+          sufix ?? const SizedBox.shrink(),
+        ],
       ),
     );
   }

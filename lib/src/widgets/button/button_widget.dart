@@ -18,16 +18,22 @@ class ButtonWidget extends StatelessWidget {
   final Function()? onTap;
   final bool isLoading;
   final Widget? prefix;
+  final Widget? sufix;
+  final Color color;
+  final Color focusColor;
   final bool _isEnabled;
 
   const ButtonWidget({
     super.key,
     required this.buttonType,
     required this.text,
+    required this.color,
+    required this.focusColor,
     this.width,
     this.onTap,
     this.isLoading = false,
     this.prefix,
+    this.sufix,
     bool? isEnabled,
   }) : _isEnabled = isEnabled ?? onTap != null;
 
@@ -38,45 +44,40 @@ class ButtonWidget extends StatelessWidget {
     this.isLoading = false,
     required this.text,
     this.prefix,
+    this.sufix,
     bool? isEnabled,
   })  : buttonType = ButtonType.primary,
+        color = ColorApp.red,
+        focusColor = ColorApp.darkRed,
         _isEnabled = isEnabled ?? onTap != null;
 
-  const ButtonWidget.outlined({
+  ButtonWidget.outlined({
     this.width,
     super.key,
     this.onTap,
     this.isLoading = false,
     required this.text,
     this.prefix,
+    this.sufix,
     bool? isEnabled,
   })  : buttonType = ButtonType.outlined,
+        color = ColorApp.white,
+        focusColor = ColorApp.red.withOpacity(0.2),
         _isEnabled = isEnabled ?? onTap != null;
 
-  const ButtonWidget.secondary({
+  ButtonWidget.secondary({
     this.width,
     super.key,
     this.onTap,
     this.isLoading = false,
     required this.text,
     this.prefix,
+    this.sufix,
     bool? isEnabled,
   })  : buttonType = ButtonType.secondary,
+        color = ColorApp.lightGrey,
+        focusColor = ColorApp.grey.withOpacity(0.2),
         _isEnabled = isEnabled ?? onTap != null;
-
-  Color getColor() => _isEnabled
-      ? switch (buttonType) {
-          ButtonType.primary => ColorApp.red,
-          ButtonType.secondary => ColorApp.lightGrey,
-          ButtonType.outlined => ColorApp.white,
-        }
-      : ColorApp.grey;
-
-  Color getFocusColor() => switch (buttonType) {
-        ButtonType.primary => ColorApp.darkRed,
-        ButtonType.secondary => ColorApp.grey.withOpacity(0.2),
-        ButtonType.outlined => ColorApp.red.withOpacity(0.2),
-      };
 
   bool get isPrimary => buttonType == ButtonType.primary;
   bool get isSecondary => buttonType == ButtonType.secondary;
@@ -87,7 +88,7 @@ class ButtonWidget extends StatelessWidget {
     return SizedBox(
       width: width,
       child: Material(
-        color: getColor(),
+        color: color,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.r),
           side: isOutlined
@@ -102,8 +103,8 @@ class ButtonWidget extends StatelessWidget {
                 ? const BorderSide(color: ColorApp.red, width: 1)
                 : BorderSide.none,
           ),
-          overlayColor: WidgetStateProperty.all(getFocusColor()),
-          focusColor: getFocusColor(),
+          overlayColor: WidgetStateProperty.all(focusColor),
+          focusColor: focusColor,
           child: Container(
             padding: EdgeInsets.symmetric(
               horizontal: SizeApp.w28,
@@ -130,12 +131,26 @@ class ButtonWidget extends StatelessWidget {
                             )
                           ],
                         )
-                      : AutoSizeText(
-                          text,
-                          style: getTextStyle(),
-                          maxLines: 1,
-                          minFontSize: 8,
-                        ),
+                      : sufix != null
+                          ? Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                AutoSizeText(
+                                  text,
+                                  style: getTextStyle(),
+                                  maxLines: 1,
+                                  minFontSize: 8,
+                                ),
+                                Gap.w8,
+                                sufix!,
+                              ],
+                            )
+                          : AutoSizeText(
+                              text,
+                              style: getTextStyle(),
+                              maxLines: 1,
+                              minFontSize: 8,
+                            ),
             ),
           ),
         ),

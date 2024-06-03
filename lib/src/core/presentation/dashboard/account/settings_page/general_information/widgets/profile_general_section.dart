@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:indowira/gen/assets.gen.dart';
 import 'package:indowira/src/constants/constants.dart';
 import 'package:indowira/src/constants/themes/themes.dart';
-import 'package:indowira/src/constants/themes/typography_app.dart';
 import 'package:indowira/src/shared/extensions/extensions.dart';
 import 'package:indowira/src/widgets/widgets.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';

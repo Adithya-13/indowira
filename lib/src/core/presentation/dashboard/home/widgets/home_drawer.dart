@@ -51,7 +51,9 @@ class HomeDrawer extends StatelessWidget {
                 Gap.h16,
                 ButtonWidget.outlined(
                   text: "DETAIL KOMUNITAS",
-                  onTap: () {},
+                  onTap: () {
+                    context.pushNamed(Routes.communityDetail.name);
+                  },
                 ),
                 Gap.h8,
                 ButtonWidget.primary(
@@ -140,7 +142,7 @@ class HomeDrawer extends StatelessWidget {
                                 ButtonWidget.primary(
                                   text: "BUAT KOMUNITAS",
                                   onTap: () {
-                                    context.goNamed(Routes.profileMember.name);
+                                    context.pushNamed(Routes.addCommunity.name);
                                   },
                                 ),
                               ],
@@ -218,12 +220,18 @@ class HomeDrawer extends StatelessWidget {
                       child: ActionDrawerButton(
                         svg: Assets.svgs.komunitasDrawer,
                         text: "Komunitas",
+                        onTap: () {
+                          context.pushNamed(Routes.communityDashboard.name);
+                        },
                       ),
                     ),
                     Expanded(
                       child: ActionDrawerButton(
                         svg: Assets.svgs.pengurusDrawer,
                         text: "Pengurus",
+                        onTap: () {
+                          context.pushNamed(Routes.commitee.name);
+                        },
                       ),
                     ),
                     Expanded(
@@ -253,6 +261,9 @@ class HomeDrawer extends StatelessWidget {
                       child: ActionDrawerButton(
                         svg: Assets.svgs.membershipDrawer,
                         text: "Membership",
+                        onTap: () {
+                          context.pushNamed(Routes.membership.name);
+                        },
                       ),
                     ),
                     Expanded(

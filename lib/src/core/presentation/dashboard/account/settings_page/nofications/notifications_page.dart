@@ -95,7 +95,7 @@ class NotificationOptions extends StatelessWidget {
               ],
             ),
           ),
-          ToggleSwitch(),
+          const ToggleSwitch(),
           Gap.h16
         ],
       ),
@@ -104,8 +104,10 @@ class NotificationOptions extends StatelessWidget {
 }
 
 class ToggleSwitch extends StatefulWidget {
+  const ToggleSwitch({super.key});
+
   @override
-  _ToggleSwitchState createState() => _ToggleSwitchState();
+  State<ToggleSwitch> createState() => _ToggleSwitchState();
 }
 
 class _ToggleSwitchState extends State<ToggleSwitch> {

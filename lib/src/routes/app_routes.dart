@@ -44,6 +44,8 @@ enum Routes {
   communityDetail,
   directoryMember,
   communityMembership,
+  communityDashboard,
+  addCommunity,
 
   // membership
   membership,
@@ -55,6 +57,10 @@ enum Routes {
 
   // report
   reportDashboard,
+
+  // commitee
+  commitee,
+  addCommitee,
 }
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -126,24 +132,36 @@ final goRouterProvider = Provider<GoRouter>(
           builder: (context, state) => const DashboardPage(tabIndex: 0),
           routes: [
             GoRoute(
-              path: 'profile-member',
-              name: Routes.profileMember.name,
-              builder: (context, state) => const ProfileMemberPage(),
-            ),
-            GoRoute(
-              path: 'community-detail',
-              name: Routes.communityDetail.name,
-              builder: (context, state) => const CommunityDetailPage(),
-            ),
-            GoRoute(
-              path: 'directory-member',
-              name: Routes.directoryMember.name,
-              builder: (context, state) => const DirectoryMemberPage(),
-            ),
-            GoRoute(
-              path: 'community-membership',
-              name: Routes.communityMembership.name,
-              builder: (context, state) => const CommunityMembershipPage(),
+              path: 'community',
+              name: Routes.communityDashboard.name,
+              builder: (context, state) => const CommunityDashboardPage(),
+              routes: [
+                GoRoute(
+                  path: 'profile-member',
+                  name: Routes.profileMember.name,
+                  builder: (context, state) => const ProfileMemberPage(),
+                ),
+                GoRoute(
+                  path: 'community-detail',
+                  name: Routes.communityDetail.name,
+                  builder: (context, state) => const CommunityDetailPage(),
+                ),
+                GoRoute(
+                  path: 'directory-member',
+                  name: Routes.directoryMember.name,
+                  builder: (context, state) => const DirectoryMemberPage(),
+                ),
+                GoRoute(
+                  path: 'community-membership',
+                  name: Routes.communityMembership.name,
+                  builder: (context, state) => const CommunityMembershipPage(),
+                ),
+                GoRoute(
+                  path: 'add-community',
+                  name: Routes.addCommunity.name,
+                  builder: (context, state) => const AddCommunityPage(),
+                ),
+              ],
             ),
             GoRoute(
               path: 'membership',
@@ -166,6 +184,18 @@ final goRouterProvider = Provider<GoRouter>(
                   path: 'add-announcement',
                   name: Routes.addAnnouncement.name,
                   builder: (context, state) => const AddAnnouncementPage(),
+                ),
+              ],
+            ),
+            GoRoute(
+              path: 'commitee',
+              name: Routes.commitee.name,
+              builder: (context, state) => const CommiteePage(),
+              routes: [
+                GoRoute(
+                  path: 'add-commitee',
+                  name: Routes.addCommitee.name,
+                  builder: (context, state) => const AddCommiteePage(),
                 ),
               ],
             ),

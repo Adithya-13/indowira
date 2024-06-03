@@ -270,11 +270,15 @@ class CustomNavBar extends StatelessWidget {
                             Gap.h20,
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
+                              children: [  
                                 Expanded(
                                   child: ActionSheetButton(
                                     svg: Assets.svgs.komunitasSheet,
                                     text: "Komunitas",
+                                    onTap: () {
+                                      context
+                                          .pushNamed(Routes.addCommunity.name);
+                                    },
                                   ),
                                 ),
                                 Expanded(

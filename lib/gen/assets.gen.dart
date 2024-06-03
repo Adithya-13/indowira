@@ -31,14 +31,29 @@ class $AssetsIconsGen {
   /// File path: assets/icons/archive.svg
   SvgGenImage get archive => const SvgGenImage('assets/icons/archive.svg');
 
+  /// File path: assets/icons/checklist.svg
+  SvgGenImage get checklist => const SvgGenImage('assets/icons/checklist.svg');
+
+  /// File path: assets/icons/close.svg
+  SvgGenImage get close => const SvgGenImage('assets/icons/close.svg');
+
   /// File path: assets/icons/comment.svg
   SvgGenImage get comment => const SvgGenImage('assets/icons/comment.svg');
+
+  /// File path: assets/icons/facebook.svg
+  SvgGenImage get facebook => const SvgGenImage('assets/icons/facebook.svg');
 
   /// File path: assets/icons/feed.svg
   SvgGenImage get feed => const SvgGenImage('assets/icons/feed.svg');
 
   /// File path: assets/icons/home.svg
   SvgGenImage get home => const SvgGenImage('assets/icons/home.svg');
+
+  /// File path: assets/icons/instagram.svg
+  SvgGenImage get instagram => const SvgGenImage('assets/icons/instagram.svg');
+
+  /// File path: assets/icons/linkedln.svg
+  SvgGenImage get linkedln => const SvgGenImage('assets/icons/linkedln.svg');
 
   /// File path: assets/icons/logout.svg
   SvgGenImage get logout => const SvgGenImage('assets/icons/logout.svg');
@@ -50,13 +65,28 @@ class $AssetsIconsGen {
   /// File path: assets/icons/settings.svg
   SvgGenImage get settings => const SvgGenImage('assets/icons/settings.svg');
 
+  /// File path: assets/icons/telegram-1.svg
+  SvgGenImage get telegram1 => const SvgGenImage('assets/icons/telegram-1.svg');
+
+  /// File path: assets/icons/telegram.svg
+  SvgGenImage get telegram => const SvgGenImage('assets/icons/telegram.svg');
+
+  /// File path: assets/icons/tiktok.svg
+  SvgGenImage get tiktok => const SvgGenImage('assets/icons/tiktok.svg');
+
   /// File path: assets/icons/transaction.svg
   SvgGenImage get transaction =>
       const SvgGenImage('assets/icons/transaction.svg');
 
+  /// File path: assets/icons/whatsapp.svg
+  SvgGenImage get whatsapp => const SvgGenImage('assets/icons/whatsapp.svg');
+
   /// File path: assets/icons/wire_leader.svg
   SvgGenImage get wireLeader =>
       const SvgGenImage('assets/icons/wire_leader.svg');
+
+  /// File path: assets/icons/youtube.svg
+  SvgGenImage get youtube => const SvgGenImage('assets/icons/youtube.svg');
 
   /// List of all assets
   List<SvgGenImage> get values => [
@@ -65,14 +95,24 @@ class $AssetsIconsGen {
         account,
         action,
         archive,
+        checklist,
+        close,
         comment,
+        facebook,
         feed,
         home,
+        instagram,
+        linkedln,
         logout,
         searchReverse,
         settings,
+        telegram1,
+        telegram,
+        tiktok,
         transaction,
-        wireLeader
+        whatsapp,
+        wireLeader,
+        youtube
       ];
 }
 
@@ -106,6 +146,9 @@ class $AssetsImagesGen {
 class $AssetsSvgsGen {
   const $AssetsSvgsGen();
 
+  /// File path: assets/svgs/add_image.svg
+  SvgGenImage get addImage => const SvgGenImage('assets/svgs/add_image.svg');
+
   /// File path: assets/svgs/artikel_sheet.svg
   SvgGenImage get artikelSheet =>
       const SvgGenImage('assets/svgs/artikel_sheet.svg');
@@ -123,6 +166,10 @@ class $AssetsSvgsGen {
 
   /// File path: assets/svgs/comment.svg
   SvgGenImage get comment => const SvgGenImage('assets/svgs/comment.svg');
+
+  /// File path: assets/svgs/community_banner.svg
+  SvgGenImage get communityBanner =>
+      const SvgGenImage('assets/svgs/community_banner.svg');
 
   /// File path: assets/svgs/emoji.svg
   SvgGenImage get emoji => const SvgGenImage('assets/svgs/emoji.svg');
@@ -303,11 +350,13 @@ class $AssetsSvgsGen {
 
   /// List of all assets
   List<SvgGenImage> get values => [
+        addImage,
         artikelSheet,
         attachment,
         charityDrawer,
         charitySheet,
         comment,
+        communityBanner,
         emoji,
         eventSheet,
         facebook,

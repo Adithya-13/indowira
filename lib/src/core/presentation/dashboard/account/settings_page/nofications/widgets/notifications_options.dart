@@ -35,7 +35,7 @@ class NotificationOptions extends StatelessWidget {
               ],
             ),
           ),
-          ToggleSwitch(),
+          const ToggleSwitch(),
           Gap.h16
         ],
       ),
