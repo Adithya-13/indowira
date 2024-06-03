@@ -98,10 +98,9 @@ class MyProfilePage extends StatelessWidget {
                       ),
                     ),
                     Gap.h16,
-                    Container(
-                      width: double.infinity,
-                      height: SizeApp.customHeight(240),
-                      color: Colors.grey,
+                    Assets.images.maps.image(
+                      fit: BoxFit.fitHeight,
+                      height: 240,
                     ),
                     Gap.h16,
                     Container(
@@ -332,10 +331,10 @@ class MyStackWidget extends StatelessWidget {
     return Stack(
       children: [
         // Dasar Container
-        Container(
-          color: Colors.grey.shade200,
-          width: double.infinity,
-          height: SizeApp.customHeight(380),
+        Positioned.fill(
+          child: Assets.images.background.image(
+            fit: BoxFit.cover,
+          ),
         ),
         // Efek Blur di atas Container dasar
 
@@ -349,13 +348,14 @@ class MyStackWidget extends StatelessWidget {
               Align(
                 alignment: Alignment.centerRight,
                 child: Container(
-                  alignment: Alignment.center,
-                  width: SizeApp.customWidth(140),
-                  height: SizeApp.h40,
-                  color: Colors.grey.shade300,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 8,
+                  ),
+                  color: ColorApp.lightGrey,
                   child: Text(
                     "CHANGE COVER",
-                    style: TypographyApp.subText1.grey.bold.fontSizeCustom(15),
+                    style: TypographyApp.subText1.grey.bold,
                   ),
                 ),
               ),
@@ -410,16 +410,20 @@ class MyStackWidget extends StatelessWidget {
                       child: Row(
                     children: [
                       SocialMediaWidget(
-                          icon: Assets.svgs.facebook.svg(color: ColorApp.red)),
+                        icon: Assets.svgs.facebook.svg(color: ColorApp.red),
+                      ),
                       Gap.w12,
                       SocialMediaWidget(
-                          icon: Assets.svgs.path.svg(width: 2, height: 2)),
+                        icon: Assets.svgs.path.svg(width: 2, height: 2),
+                      ),
                       Gap.w12,
                       SocialMediaWidget(
-                          icon: Assets.svgs.twitter.svg(width: 5, height: 5)),
+                        icon: Assets.svgs.twitter.svg(width: 5, height: 5),
+                      ),
                       Gap.w12,
                       SocialMediaWidget(
-                          icon: Assets.svgs.linkedin.svg(width: 5)),
+                        icon: Assets.svgs.linkedin.svg(width: 5),
+                      ),
                     ],
                   )),
                   Container(
@@ -437,6 +441,7 @@ class MyStackWidget extends StatelessWidget {
                   )
                 ],
               ),
+              Gap.h20,
             ],
           ),
         )
@@ -474,29 +479,6 @@ class DataProfile extends StatelessWidget {
             style: TypographyApp.text1.grey.fontSizeCustom(15),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class SocialMediaWidget extends StatelessWidget {
-  final Widget icon;
-
-  const SocialMediaWidget({
-    required this.icon,
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {},
-      child: Container(
-        width: SizeApp.h32,
-        height: SizeApp.h32,
-        decoration: BoxDecoration(
-            color: Colors.white, borderRadius: BorderRadius.circular(56)),
-        child: icon,
       ),
     );
   }

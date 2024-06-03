@@ -65,6 +65,8 @@ export 'community/community_membership/community_membership_page.dart';
 export 'community/community_dashboard/community_dashboard_page.dart';
 /// add_community
 export 'community/add_community/add_community_page.dart';
+/// member_profile
+export 'community/member_profile/detail_member_page.dart';
 
 //* MEMBERSHIP
 /// membership
@@ -83,6 +85,24 @@ export 'announcement/add_announcement/add_announcement_page.dart';
 //* REPORT
 /// report_dashboard
 export 'report/report_dashboard/report_dashboard_page.dart';
+/// report_business
+export 'report/report_business/report_business_page.dart';
+/// report_business_detail
+export 'report/report_business_detail/report_business_detail_page.dart';
+/// report_community
+export 'report/report_community/report_community_page.dart';
+/// report_community_detail
+export 'report/report_community_detail/report_community_detail_page.dart';
+/// report_social_impact
+export 'report/report_social_impact/report_social_impact_page.dart';
+/// report_social_impact_detail
+export 'report/report_social_impact_detail/report_social_impact_detail_page.dart';
+/// report_syirkah
+export 'report/report_syirkah/report_syirkah_page.dart';
+/// report_syirkah_detail
+export 'report/report_syirkah_detail/report_syirkah_detail_page.dart';
+/// report_syirkah_detail_member
+export 'report/report_syirkah_detail_member/report_syirkah_detail_member_page.dart';
 
 //* COMMITEE
 /// commitee

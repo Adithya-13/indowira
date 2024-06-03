@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:indowira/gen/assets.gen.dart';
 import 'package:indowira/src/constants/constants.dart';
+import 'package:indowira/src/routes/app_routes.dart';
 import 'package:indowira/src/shared/extensions/extensions.dart';
 import 'package:indowira/src/widgets/widgets.dart';
 
@@ -43,6 +45,9 @@ class ReportDashboardPage extends StatelessWidget {
               children: [
                 Gap.h16,
                 GestureDetector(
+                  onTap: () {
+                    context.goNamed(Routes.reportCommunity.name);
+                  },
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(16),
                     child: Assets.svgs.reportCommunity.svg(
@@ -52,6 +57,9 @@ class ReportDashboardPage extends StatelessWidget {
                 ),
                 Gap.h16,
                 GestureDetector(
+                  onTap: () {
+                    context.goNamed(Routes.reportBusiness.name);
+                  },
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(16),
                     child: Assets.svgs.reportBusinessProgress.svg(
@@ -61,6 +69,9 @@ class ReportDashboardPage extends StatelessWidget {
                 ),
                 Gap.h16,
                 GestureDetector(
+                  onTap: () {
+                    context.goNamed(Routes.reportSyirkah.name);
+                  },
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(16),
                     child: Assets.svgs.reportSyirkah.svg(
@@ -70,6 +81,9 @@ class ReportDashboardPage extends StatelessWidget {
                 ),
                 Gap.h16,
                 GestureDetector(
+                  onTap: () {
+                    context.goNamed(Routes.reportSocialImpact.name);
+                  },
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(16),
                     child: Assets.svgs.reportSocialImpact.svg(

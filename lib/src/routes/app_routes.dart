@@ -46,6 +46,7 @@ enum Routes {
   communityMembership,
   communityDashboard,
   addCommunity,
+  detailMember,
 
   // membership
   membership,
@@ -57,6 +58,15 @@ enum Routes {
 
   // report
   reportDashboard,
+  reportBusiness,
+  reportBusinessDetail,
+  reportCommunity,
+  reportCommunityDetail,
+  reportSocialImpact,
+  reportSocialImpactDetail,
+  reportSyirkah,
+  reportSyirkahDetail,
+  reportSyirkahDetailMember,
 
   // commitee
   commitee,
@@ -161,6 +171,11 @@ final goRouterProvider = Provider<GoRouter>(
                   name: Routes.addCommunity.name,
                   builder: (context, state) => const AddCommunityPage(),
                 ),
+                GoRoute(
+                  path: 'detail-member',
+                  name: Routes.detailMember.name,
+                  builder: (context, state) => const DetailMemberPage(),
+                ),
               ],
             ),
             GoRoute(
@@ -203,7 +218,68 @@ final goRouterProvider = Provider<GoRouter>(
               path: 'report-dashboard',
               name: Routes.reportDashboard.name,
               builder: (context, state) => const ReportDashboardPage(),
-              routes: const [],
+              routes: [
+                GoRoute(
+                  path: 'report-business',
+                  name: Routes.reportBusiness.name,
+                  builder: (context, state) => const ReportBusinessPage(),
+                  routes: [
+                    GoRoute(
+                      path: 'detail',
+                      name: Routes.reportBusinessDetail.name,
+                      builder: (context, state) =>
+                          const ReportBusinessDetailPage(),
+                    ),
+                  ],
+                ),
+                GoRoute(
+                  path: 'report-community',
+                  name: Routes.reportCommunity.name,
+                  builder: (context, state) => const ReportCommunityPage(),
+                  routes: [
+                    GoRoute(
+                      path: 'detail',
+                      name: Routes.reportCommunityDetail.name,
+                      builder: (context, state) =>
+                          const ReportCommunityDetailPage(),
+                    ),
+                  ],
+                ),
+                GoRoute(
+                  path: 'report-social-impact',
+                  name: Routes.reportSocialImpact.name,
+                  builder: (context, state) => const ReportSocialImpactPage(),
+                  routes: [
+                    GoRoute(
+                      path: 'detail',
+                      name: Routes.reportSocialImpactDetail.name,
+                      builder: (context, state) =>
+                          const ReportSocialImpactDetailPage(),
+                    ),
+                  ],
+                ),
+                GoRoute(
+                  path: 'report-syirkah',
+                  name: Routes.reportSyirkah.name,
+                  builder: (context, state) => const ReportSyirkahPage(),
+                  routes: [
+                    GoRoute(
+                      path: 'detail',
+                      name: Routes.reportSyirkahDetail.name,
+                      builder: (context, state) =>
+                          const ReportSyirkahDetailPage(),
+                      routes: [
+                        GoRoute(
+                          path: 'member',
+                          name: Routes.reportSyirkahDetailMember.name,
+                          builder: (context, state) =>
+                              const ReportSyirkahDetailMemberPage(),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
             ),
           ],
         ),

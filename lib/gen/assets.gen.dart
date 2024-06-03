@@ -119,6 +119,10 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/background.png
+  AssetGenImage get background =>
+      const AssetGenImage('assets/images/background.png');
+
   /// File path: assets/images/freelancer-logo.png
   AssetGenImage get freelancerLogo =>
       const AssetGenImage('assets/images/freelancer-logo.png');
@@ -130,17 +134,32 @@ class $AssetsImagesGen {
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
 
+  /// File path: assets/images/maps.png
+  AssetGenImage get maps => const AssetGenImage('assets/images/maps.png');
+
   /// File path: assets/images/masak-asik-logo.png
   AssetGenImage get masakAsikLogo =>
       const AssetGenImage('assets/images/masak-asik-logo.png');
+
+  /// File path: assets/images/profile_picture.png
+  AssetGenImage get profilePicture =>
+      const AssetGenImage('assets/images/profile_picture.png');
 
   /// File path: assets/images/sepedaan-logo.png
   AssetGenImage get sepedaanLogo =>
       const AssetGenImage('assets/images/sepedaan-logo.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [freelancerLogo, indowiraLogo, logo, masakAsikLogo, sepedaanLogo];
+  List<AssetGenImage> get values => [
+        background,
+        freelancerLogo,
+        indowiraLogo,
+        logo,
+        maps,
+        masakAsikLogo,
+        profilePicture,
+        sepedaanLogo
+      ];
 }
 
 class $AssetsSvgsGen {

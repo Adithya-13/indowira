@@ -243,59 +243,64 @@ class CommiteeItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        color: ColorApp.white,
-        border: Border.all(
-          color: ColorApp.divider,
+    return GestureDetector(
+      onTap: () {
+        context.pushNamed(Routes.detailMember.name);
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          color: ColorApp.white,
+          border: Border.all(
+            color: ColorApp.divider,
+          ),
         ),
-      ),
-      padding: const EdgeInsets.all(16),
-      child: Row(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Image.network(
-              'https://a.travel-assets.com/findyours-php/viewfinder/images/res40/481000/481689-Ocean-View-Norfolk.jpg',
-              width: SizeApp.h64,
-              height: SizeApp.h64,
-              fit: BoxFit.cover,
+        padding: const EdgeInsets.all(16),
+        child: Row(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Image.network(
+                'https://a.travel-assets.com/findyours-php/viewfinder/images/res40/481000/481689-Ocean-View-Norfolk.jpg',
+                width: SizeApp.h64,
+                height: SizeApp.h64,
+                fit: BoxFit.cover,
+              ),
             ),
-          ),
-          Gap.w16,
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  "Alex Thomas",
-                  style: TypographyApp.text1.black,
-                ),
-                Gap.h8,
-                Text(
-                  'Alumni Sekolah Perizinan Batch 1',
-                  style: TypographyApp.text2.grey,
-                ),
-                Gap.h4,
-                Row(
-                  children: [
-                    Text(
-                      "Jakarta",
-                      style: TypographyApp.text2.grey,
-                    ),
-                    Gap.w8,
-                    Text(
-                      "Contact Info",
-                      style: TypographyApp.text2.blue,
-                    ),
-                  ],
-                ),
-              ],
+            Gap.w16,
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    "Alex Thomas",
+                    style: TypographyApp.text1.black,
+                  ),
+                  Gap.h8,
+                  Text(
+                    'Alumni Sekolah Perizinan Batch 1',
+                    style: TypographyApp.text2.grey,
+                  ),
+                  Gap.h4,
+                  Row(
+                    children: [
+                      Text(
+                        "Jakarta",
+                        style: TypographyApp.text2.grey,
+                      ),
+                      Gap.w8,
+                      Text(
+                        "Contact Info",
+                        style: TypographyApp.text2.blue,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
